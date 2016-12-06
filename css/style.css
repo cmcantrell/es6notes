@@ -24,6 +24,19 @@ h2, h3, h4, h5{
 	font-weight: 700;
 }
 
+h2 + i > a
+{
+	font-size: 0.8em;
+	color: white;
+	-webkit-transition: color 0.2s ease-out;
+	transition: color 0.2s ease-out;
+}
+
+h2 + i > a:hover
+{
+	color: #d9534f;
+}
+
 #h1-container
 {
 	background-color: #0d5398;
@@ -91,4 +104,19 @@ h2, h3, h4, h5{
 .code-block code .indent2
 {
 	margin-left: 4em;
+}
+
+.code-block code .indent3
+{
+	margin-left: 6em;
+}
+
+.code-block code .indent4
+{
+	margin-left: 8em;
+}
+
+.code-block code .indent5
+{
+	margin-left: 10em;
 }

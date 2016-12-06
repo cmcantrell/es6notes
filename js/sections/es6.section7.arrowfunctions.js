@@ -59,10 +59,6 @@ App.swapTemplate(document.getElementById('main-container'),`
 						<span>16</span>
 						<span>17</span>
 						<span>18</span>
-						<span>19</span>
-						<span>20</span>
-						<span>21</span>
-						<span>22</span>
 					</td>
 					<td class="javascript">
 						<code>
