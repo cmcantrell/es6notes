@@ -102,4 +102,4 @@
 	return global.$ = selector => new Utilities(selector);
 })(this || window); // babel doesn't like "this", transpiles to 'undefined'
 // call
-$('.user-interface').event('click', this || window);
+

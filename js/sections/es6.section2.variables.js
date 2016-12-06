@@ -25,6 +25,100 @@
 	*
 **/
 console.log('********** Section 2.1 - Let Declaration ***********');
+
+let sectionTitle	= "Classes &amp; Inheritance";
+
+App.swapTemplate(document.getElementById('main-container'),`
+	<header>
+		<hgroup>
+			<h2>${sectionTitle}</h2>
+			<h3>New block scoped variables in ES6</h3>
+			<p>Key word let and const form hoisting escaping variables scoped only to the local block.</p>
+		</hgroup>
+	</header>
+	<div class="section">
+		<div class="code-block">
+			<col width="1"/>
+			<col width="11"/>
+			<table>
+				<tr>
+					<td class="gutter">
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+						<span>11</span>
+						<span>12</span>
+					</td>
+					<td class="javascript">
+						<code>
+							function varTest() { <br/>
+								<i class="indent1"></i>console.log(x); // undefined.  X is hoisted from succeeding line. <br/>
+								<i class="indent1"></i>var x = 1; <br/>
+								<i class="indent1"></i>if (true) { <br/>
+									<i class="indent2"></i>var x = 2;  // var is not limited to the scope of the if statement and affects the functions scope <br/>
+									<i class="indent2"></i>var x = 3;  // no limitations on manipulating the value of var from within the same scope/block <br/>
+									<i class="indent2"></i>console.log(x); // 2 <br/>
+								<i class="indent1"></i>} <br/>
+								<i class="indent1"></i>console.log(x);  // 2 <br/>
+							}; <br/>
+							varTest(); <br/><br/>
+						</code>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="code-block">
+			<col width="1"/>
+			<col width="11"/>
+			<table>
+				<tr>
+					<td class="gutter">
+						<span>1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+						<span>11</span>
+						<span>12</span>
+						<span>13</span>
+						<span>14</span>
+					</td>
+					<td class="javascript">
+						<code>
+							function letTest() { <br/>
+								<i class="indent1"></i>// console.log(x);	<br/>
+								// let escapes hoisting rules. <br/>
+								// would throw an error and halt function as expected in most programming languages<br/>
+								<i class="indent1"></i>let x = 1; // decalred in functions local scope<br/>
+								<i class="indent1"></i>if (true) { <br/>
+									<i class="indent2"></i>let x = 2;  // declared with let, the variables scope is limited to the if local blocks scope and doesn't inherit <br/>
+									<i class="indent2"></i>// let x = 3;  // error: cannot redeclare a let defined variable within the same scope block <br/>
+									<i class="indent2"></i>console.log(x);  // 2 <br/>
+								<i class="indent1"></i>} <br/>
+								<i class="indent1"></i>console.log(x);  // 1 <br/>
+							}; <br/>
+							letTest(); <br/>
+						</code>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+`);
+
+
 function varTest() {
 	console.log(x); // undefined.  X is hoisted from succeeding line.
 	var x = 1;

@@ -39,20 +39,6 @@
 					}.bind(this));
 				}
 			}
-
-/*
-			for(let el in ele){
-				if( ele.hasOwnProperty(el) ){
-					// ES 6.0+
-					event.forEach((ev) => {
-						ele[el].addEventListener(ev, (ev) => {
-							console.log(this);
-							this.eventController( ev, context, null );
-						});
-					});
-				}
-			}
-*/
 		},
 		
 		eventController 		: function( event, context=this, args ){
@@ -76,52 +62,6 @@
 				this.action		= action[i];
 			}
 			return this;
-		},
-	
-		getClassList 			: function(ele){
-			if( typeof ele.className === 'undefined' ){
-				return [];
-			}
-			return ele.className.split(' ');
-		},
-		
-		classify 				: function(clss){
-			let ele = this.ele;
-			if( !ele || !clss ){ return this; } 
-			let preClass		= this.getClassList(ele);
-			if( preClass.indexOf(clss) > -1 ){
-				return this;
-			}
-			preClass.push(clss);
-			try{
-				ele.className = preClass.join(' ');
-			}
-			catch( e ){
-				console.log(e);
-				return this;
-			}
-			return this;
-		},
-		
-		declassify 				: function(clss){
-			let ele 			= this.ele;
-			if( !ele || !clss ){ return this; }
-			let preClass		= this.getClassList(ele);
-			for( let i=0, n=preClass.length; i<n; i++ ){
-				var pttn	= new RegExp(clss);
-				if(pttn.exec(preClass[i])){
-					preClass.splice(i, 1);
-					break;
-				}
-			}
-			try{
-				ele.className		= preClass.join(' ');
-				return this;
-			}
-			catch(e){
-				console.log( e );
-				return this;
-			}
 		}
 	};
     

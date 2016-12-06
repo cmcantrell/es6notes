@@ -53,4 +53,4 @@
 //	the compile command from your root directory and watch file
 // ./node_modules/.bin/babel ./js/utilities.js -w -o ./js/utilities.min.js
 
-window.location = 'https://babeljs.io/docs/setup/#installation';
+// window.location = 'https://babeljs.io/docs/setup/#installation';
