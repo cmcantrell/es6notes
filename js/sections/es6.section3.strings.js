@@ -85,10 +85,10 @@ App.swapTemplate(document.getElementById('main-container'),`
 					<td class="javascript">
 						<code>
 							var Address		= function(address){ <br/>
-								this.name		= address.name; <br/>
-								this.address	= address.address; <br/>
-								this.city		= address.city; <br/>
-								this.state		= address.state; <br/>
+								<i class="indent1"></i>this.name		= address.name; <br/>
+								<i class="indent1"></i>this.address	= address.address; <br/>
+								<i class="indent1"></i>this.city		= address.city; <br/>
+								<i class="indent1"></i>this.state		= address.state; <br/>
 							}
 							let _address = new Address({name:"Insight Designs", address:"2006", city:"Boulder",state:"CO"}); <br/><br/>
 							console.log(\`We are still at \$\{_address.name\} <br/>
